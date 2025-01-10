@@ -15,8 +15,8 @@ Prerequisites
     ```bash
     node --version
     
-2. Install ffmpeg from - https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-2025-01-08-git-251de1791e-full_build.7z and extract the archive file
-3. Open the bin folder, copy its path and add it to the 'PATH' environment variable on you windows pc. 
+2. Install ffmpeg from - https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-2025-01-08-git-251de1791e-full_build.7z and extract the archive file.
+3. Open the bin folder, copy its path and add it to the 'PATH' environment variable of you windows pc/laptop. 
 
 ## After ffmpeg is installed
 Note: Make sure that name of each folder is correct, and another folder with the name of target folder should NOT exist before running the script.
