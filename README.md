@@ -27,10 +27,13 @@ Note: Make sure that name of each folder is correct, and another folder with the
 
 # ✨ Example Workflow
 Enter the source file extension (e.g., mkv): mkv
+
 Enter the target file extension (e.g., mp4): mp4
+
 Enter the source folder name: mkvfolder
+
 Enter the target folder name: mp4folder
----
+
 
 
 ❤️ Contribute
