@@ -26,6 +26,9 @@ Note: Make sure that name of each folder is correct, and another folder with the
 3. Run ``node converter.js`` and enter the details asked.
 
 ## ✨ Example Workflow
+Is codec change required (Yes/No)
+[Recommended if converting AAC codec to mp3]-(Only .mp3 codec {libmp3lame} is available as of now):  [Answer Yes or No]
+
 Enter the source file extension (e.g., mkv): mkv
 
 Enter the target file extension (e.g., mp4): mp4
@@ -34,7 +37,8 @@ Enter the source folder name: mkvfolder
 
 Enter the target folder name: mp4folder
 
-
+## Limitation - 
+For Codec changes, only mp3 codec has been included for now.
 
 ## ❤️ Contribute
 Feel free to fork this repository, open issues, or submit pull requests to improve this tool.
