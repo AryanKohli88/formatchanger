@@ -27,7 +27,6 @@ Note: Make sure that name of each folder is correct, and another folder with the
 
 ## ✨ Example Workflow
 Is codec change required (Yes/No)
-[Recommended if converting AAC codec to mp3]-(Only .mp3 codec {libmp3lame} is available as of now):  [Answer Yes or No]
 
 Enter the source file extension (e.g., mkv): mkv
 
