@@ -17,8 +17,9 @@ function promptUser(question) {
 async function main() {
     let newCodec;
     let changeCodec = 'changeCodec';
-    while(changeCodec!= "Yes" && changeCodec != 'No') 
-        changeCodec= await promptUser("Is codec change required (Yes/No)\n[Recommended if converting AAC codec to mp3]-(Only .mp3 codec {libmp3lame} is available as of now) ");
+    while(changeCodec.toLowerCase()!= "yes" && changeCodec.toLowerCase() != 'no') {
+        changeCodec= await promptUser("Is codec change required (Yes/No): ");
+    }
     const CodecChange = changeCodec==="Yes"?true:false;
     if(CodecChange) {
         newCodec = await promptUser("New Codec: ");
@@ -67,8 +68,10 @@ async function main() {
 
     function convertFunctionsNewCodec(inputFolder, outputFolder, newcodec) {
         let codecname = "mp3";
-        if(newcodec==="mp3") {
-            codecname = "libmp3lame";
+        if(newcodec.toLowerCase() ==="mp3") {
+            codecname = "libmp3lame -ab 128k";
+        } else if(newcodec.toLowerCase()==="wav"){
+            codecname = "pcm_s16le -ar 44100 -ac 2";
         }
 
         if (!fs.existsSync(outputFolder)) {
@@ -85,7 +88,7 @@ async function main() {
                 const inputFile = path.join(inputFolder, file);
                 const outputFile = path.join(outputFolder, file.replace(`.${fromValue}`, `.${toValue}`));
 
-                const command = `ffmpeg -i "${inputFile}" -acodec "${codecname}" -ab 128k  "${outputFile}"`
+                const command = `ffmpeg -i "${inputFile}" -acodec "${codecname}"  "${outputFile}"`
                 exec(command, (error, stdout, stderr) => {
                     if (error) {
                         console.error(`Error converting ${file}: ${error.message}`);
