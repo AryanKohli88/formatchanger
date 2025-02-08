@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 const readline = require('readline');
-const {processFolder} = require('./trimmer')
+const {trim} = require('./trimmer')
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -22,7 +22,8 @@ async function main() {
         const fromFolder = await promptUser("Enter the source folder name: ");
         const toFolder = await promptUser("Enter the target folder name: ");
         const len =  await promptUser("Length of each smaller clip: ");
-        processFolder(fromFolder,toFolder, len); 
+        trim(fromFolder,toFolder, len); 
+
     } else {
         let newCodec;
         let changeCodec = 'changeCodec';
