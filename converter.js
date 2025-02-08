@@ -30,7 +30,8 @@ async function main() {
         while(changeCodec.toLowerCase()!= "yes" && changeCodec.toLowerCase() != 'no') {
             changeCodec= await promptUser("Is codec change required (Yes/No): ");
         }
-        const CodecChange = changeCodec==="Yes"?true:false;
+console.log(changeCodec);
+        const CodecChange = changeCodec.toLowerCase()==="yes"?true:false;
         if(CodecChange) {
             newCodec = await promptUser("New Codec: ");
         }
